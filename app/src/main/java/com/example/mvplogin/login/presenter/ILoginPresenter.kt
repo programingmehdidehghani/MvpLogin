@@ -5,5 +5,5 @@ interface ILoginPresenter {
     fun clear()
     fun showProgress()
     fun hideProgress()
-    fun login(id : String,password : Int)
+    fun login(id : String,password : String)
 }

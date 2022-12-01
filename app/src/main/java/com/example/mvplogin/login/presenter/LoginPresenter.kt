@@ -1,5 +1,6 @@
 package com.example.mvplogin.login.presenter
 
+import com.example.mvplogin.login.presenter.controller.LoginController
 import com.example.mvplogin.login.view.ILoginView
 
 class LoginPresenter(var iLoginView: ILoginView) : ILoginPresenter {
@@ -15,7 +16,17 @@ class LoginPresenter(var iLoginView: ILoginView) : ILoginPresenter {
         iLoginView.onHideProgress()
     }
 
-    override fun login(id: String, password: Int) {
-        iLoginView.onUpdateUserInfo(id,password)
+    override fun login(id: String, password: String) {
+        showProgress()
+        LoginController.requestLogin(id = id, password = password, object : LoginController.LoginControllerDelegate{
+            override fun onSuccess(response: String) {
+                TODO("Not yet implemented")
+            }
+
+            override fun onFailed() {
+                TODO("Not yet implemented")
+            }
+
+        })
     }
 }
