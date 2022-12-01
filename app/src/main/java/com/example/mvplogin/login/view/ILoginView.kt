@@ -5,5 +5,5 @@ interface ILoginView {
     fun onClear()
     fun onShowProgress()
     fun onHideProgress()
-    fun onUpdateUserInfo()
+    fun onUpdateUserInfo(nickName : String, age : Int)
 }
