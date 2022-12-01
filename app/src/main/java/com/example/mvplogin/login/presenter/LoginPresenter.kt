@@ -1,5 +1,7 @@
 package com.example.mvplogin.login.presenter
 
+import android.util.Log
+import com.example.mvplogin.login.model.UserInfoModel
 import com.example.mvplogin.login.presenter.controller.LoginController
 import com.example.mvplogin.login.view.ILoginView
 
@@ -20,7 +22,11 @@ class LoginPresenter(var iLoginView: ILoginView) : ILoginPresenter {
         showProgress()
         LoginController.requestLogin(id = id, password = password, object : LoginController.LoginControllerDelegate{
             override fun onSuccess(response: String) {
-                TODO("Not yet implemented")
+                Log.i("tag",response.toString())
+
+                val userInfoModel = UserInfoModel()
+                userInfoModel.nickName = "coding with out"
+                userInfoModel.age = 1
             }
 
             override fun onFailed() {

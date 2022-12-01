@@ -2,6 +2,6 @@ package com.example.mvplogin.login.model
 
 class UserInfoModel {
 
-    val nickName : String = ""
-    val age : Int = 0
+    var nickName : String = ""
+    var age : Int = 0
 }
