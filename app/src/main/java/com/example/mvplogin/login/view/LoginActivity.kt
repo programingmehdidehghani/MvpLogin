@@ -8,6 +8,8 @@ import android.widget.EditText
 import android.widget.FrameLayout
 import android.widget.TextView
 import com.example.mvplogin.R
+import com.example.mvplogin.login.presenter.ILoginPresenter
+import com.example.mvplogin.login.presenter.LoginPresenter
 
 class LoginActivity : AppCompatActivity() , ILoginView {
 
@@ -17,6 +19,8 @@ class LoginActivity : AppCompatActivity() , ILoginView {
     lateinit var tv_result_view_login_info : TextView
     lateinit var fl_progress : FrameLayout
 
+    lateinit var iLoginPresenter: ILoginPresenter
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,7 +28,10 @@ class LoginActivity : AppCompatActivity() , ILoginView {
 
         findView()
         setListener()
+    }
 
+    private fun initPresent(){
+        iLoginPresenter = LoginPresenter(iLoginView = this)
     }
 
     private fun findView(){
