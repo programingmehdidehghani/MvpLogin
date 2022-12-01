@@ -25,7 +25,7 @@ class LoginActivity : AppCompatActivity() , ILoginView {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-
+        initPresent()
         findView()
         setListener()
     }
@@ -40,13 +40,13 @@ class LoginActivity : AppCompatActivity() , ILoginView {
         btn_login = findViewById(R.id.btn_login)
         tv_result_view_login_info = findViewById(R.id.tv_result_view_login_info)
         fl_progress = findViewById(R.id.fl_progress)
-        btn_login.setOnClickListener {
 
-        }
     }
 
     private fun setListener(){
-
+        btn_login.setOnClickListener {
+            iLoginPresenter.login(id = et_text_id_login_activity.text.toString().trim(),et_text_pm_login_activity.text.toString().trim())
+        }
     }
 
     override fun onClear() {
