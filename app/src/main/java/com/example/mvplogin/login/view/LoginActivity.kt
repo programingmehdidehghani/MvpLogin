@@ -18,16 +18,24 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
+        findView()
+        setListener()
+
     }
 
-    fun findView(){
+    private fun findView(){
         et_text_id_login_activity = findViewById(R.id.et_text_id_login_activity)
         et_text_pm_login_activity = findViewById(R.id.et_text_pm_login_activity)
         btn_login = findViewById(R.id.btn_login)
         tv_result_view_login_info = findViewById(R.id.tv_result_view_login_info)
 
         btn_login.setOnClickListener {
-            
+
         }
+    }
+
+    private fun setListener(){
+
     }
 }
