@@ -27,6 +27,9 @@ class LoginPresenter(var iLoginView: ILoginView) : ILoginPresenter {
                 val userInfoModel = UserInfoModel()
                 userInfoModel.nickName = "coding with out"
                 userInfoModel.age = 1
+
+                hideProgress()
+                iLoginView.onUpdateUserInfo(nickName = userInfoModel.nickName, age = userInfoModel.age)
             }
 
             override fun onFailed() {
